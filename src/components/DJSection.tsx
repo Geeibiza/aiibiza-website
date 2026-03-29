@@ -37,8 +37,8 @@ export default function DJSection() {
         </div>
         <div className="absolute inset-0 bg-black/50" />
 
-        {/* 06 AM Radio — small looping screen top right */}
-        <div className="absolute top-8 right-6 md:right-10 z-20 w-[180px] md:w-[240px]">
+        {/* 06 AM Radio — small looping screen top right, hidden on mobile */}
+        <div className="hidden md:block absolute top-8 right-10 z-20 w-[240px]">
           <div className="relative overflow-hidden" style={{
             border: '1px solid rgba(200,255,0,0.4)',
             boxShadow: '0 0 20px rgba(200,255,0,0.1)',
@@ -73,7 +73,7 @@ export default function DJSection() {
             </p>
             <div className="flex items-center gap-6">
               <a
-                href="https://06amibiza.com"
+                href="https://youtube.com/@06amibiza"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-body text-sm tracking-widest uppercase border border-fluor text-fluor px-6 py-3 hover:bg-fluor hover:text-black transition-all duration-300"
@@ -95,7 +95,7 @@ export default function DJSection() {
         {/* Sound toggle */}
         <button
           onClick={() => setMuted(!muted)}
-          className="absolute top-8 right-10 z-20 font-body text-xs tracking-widest uppercase text-white/50 hover:text-white transition-colors flex items-center gap-2"
+          className="hidden md:flex absolute top-8 right-10 z-20 font-body text-xs tracking-widest uppercase text-white/50 hover:text-white transition-colors items-center gap-2"
         >
           <span>Sound:</span>
           <span className={muted ? 'text-white/30' : 'text-fluor'}>{muted ? 'Off' : 'On'}</span>

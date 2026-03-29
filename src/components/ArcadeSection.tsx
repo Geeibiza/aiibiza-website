@@ -74,17 +74,17 @@ export default function ArcadeSection() {
         </div>
 
         {/* Predator badge */}
-        <div className="absolute z-20" style={{ top: '75px', left: '75px' }}>
+        <div className="absolute z-20" style={{ top: '75px', left: '20px' }}>
           <img
             src="/images/predator-badge.png"
             alt="Apex Predator"
-            className="w-40 md:w-56 opacity-90"
+            className="w-24 md:w-56 opacity-90"
             style={{ filter: 'drop-shadow(0 0 12px rgba(0,255,65,0.5))' }}
           />
         </div>
 
-        {/* RTFKT sneaker video — PiP top right */}
-        <div className="absolute top-40 right-6 md:right-10 z-20 w-[200px] md:w-[280px]" style={{ filter: 'drop-shadow(0 0 20px rgba(0,255,65,0.3))' }}>
+        {/* RTFKT sneaker video — PiP top right, hidden on mobile */}
+        <div className="hidden md:block absolute top-40 right-10 z-20 w-[280px]" style={{ filter: 'drop-shadow(0 0 20px rgba(0,255,65,0.3))' }}>
           <div className="relative overflow-hidden" style={{ border: '1px solid rgba(0,255,65,0.5)', boxShadow: '0 0 30px rgba(0,255,65,0.15)' }}>
             <div className="aspect-video">
               <iframe

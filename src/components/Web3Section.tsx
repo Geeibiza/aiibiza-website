@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react'
 import NFTGallery from './NFTGallery'
 
 const web3Items = [
-  { label: 'Abstract Chain', tag: '@AbstractChain', desc: 'Active community member & builder on Abstract L2' },
+  { label: 'Abstract Chain', tag: '@AbstractChain', desc: 'Active community member & builder on Abstract L2', icon: '/images/abs-icon.svg' },
   { label: 'NFT Curator', tag: 'OnCyber Gallery', desc: 'Threshold NFT Gallery by GVD — curating digital art since the early days' },
-  { label: 'Bitcoin Ordinals', tag: 'NodeMonkes · BitApes', desc: 'Early adopter. Inscriptions launched Jan. 2023 — in from the start. Holder of NodeMonkes & BitApes.' },
+  { label: 'NodeMonkes · Nookies · BitApes', tag: 'Bitcoin Ordinals', desc: 'Early adopter. Inscriptions launched Jan. 2023 — in from the start. Holder of NodeMonkes, Nookies & BitApes.' },
   { label: 'Virtual Real Estate', tag: 'Metaverse', desc: 'Significant virtual land portfolio. Offering clients unique digital showcase opportunities.' },
   { label: 'CloneX', tag: 'RTFKT', desc: 'OG NFT holder. Part of the culture before it was mainstream.' },
   { label: '$BTC · #DeFi', tag: 'Since 2009', desc: 'Not a visitor. A resident of the crypto world.' },
@@ -37,7 +37,7 @@ export default function Web3Section() {
         <img
           src="/images/abstract-banner.jpg"
           alt="Abstract Chain"
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          className="absolute inset-0 w-full h-full object-contain object-center opacity-80"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black" />
         <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-10 pb-16 z-10">
@@ -65,7 +65,8 @@ export default function Web3Section() {
               <div className="flex items-start gap-8">
                 <span className="font-body text-white/20 text-sm mt-1 w-6">{String(i + 1).padStart(2, '0')}</span>
                 <div>
-                  <h3 className="font-display text-3xl md:text-4xl text-white group-hover:text-fluor transition-colors duration-300">
+                  <h3 className="font-display text-3xl md:text-4xl text-white group-hover:text-fluor transition-colors duration-300 flex items-center gap-3">
+                    {item.icon && <img src={item.icon} alt="" className="h-[1em] w-auto inline-block opacity-80 group-hover:opacity-100 transition-opacity" />}
                     {item.label}
                   </h3>
                   <p className="font-body text-white/40 text-sm mt-2">{item.desc}</p>

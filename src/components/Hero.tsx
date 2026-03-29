@@ -40,7 +40,7 @@ export default function Hero() {
           <span className="text-fluor">.</span>
         </h1>
         <p className="font-body text-white/60 text-sm md:text-base tracking-[0.3em] uppercase mt-2">
-          Web3 · Music · Kitchen · Ibiza
+          DJ · Chef · Gamer · Web3 · Ibiza
         </p>
       </div>
 
