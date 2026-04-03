@@ -1,157 +1,139 @@
-interface Props {
-  onLegal: (page: 'privacy' | 'terms') => void
-}
+type LegalPage = 'privacy' | 'disclaimer'
 
-export default function Footer({ onLegal }: Props) {
+export default function Footer({ onOpenLegal }: { onOpenLegal: (page: LegalPage) => void }) {
+  const year = new Date().getFullYear()
+
   return (
-    <footer id="contact" className="relative bg-black border-t border-white/10">
+    <footer
+      className="pt-16"
+      style={{
+        borderTop: '1px solid var(--ghost-line)',
+        background: 'var(--terminal-dark)',
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-8">
 
-      {/* Big CTA + Contact Form */}
-      <div className="px-6 md:px-10 pt-24 pb-16 border-b border-white/10">
-        <p className="font-body text-white/40 text-sm tracking-widest uppercase mb-4">
-          Let's build something.
-        </p>
-        <a
-          href="mailto:gee@fastingibiza.com"
-          className="font-display text-[10vw] leading-none text-white hover:text-fluor transition-colors duration-500 block mb-16"
-        >
-          LET'S TALK
-          <span className="text-fluor">.</span>
-        </a>
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
 
-        {/* Contact Form */}
-        <form
-          action="https://formspree.io/f/xpwzgkqb"
-          method="POST"
-          className="grid md:grid-cols-2 gap-6 max-w-3xl"
-        >
-          <div className="flex flex-col gap-2">
-            <label className="font-body text-white/30 text-xs tracking-widest uppercase">Name</label>
-            <input
-              type="text"
-              name="name"
-              required
-              placeholder="Your name"
-              className="bg-transparent border border-white/10 px-4 py-3 font-body text-white text-sm placeholder:text-white/20 focus:border-fluor focus:outline-none transition-colors"
-            />
+          {/* Brand */}
+          <div>
+            <div className="font-mono text-sm tracking-widest uppercase mb-4" style={{ letterSpacing: '0.2em', color: 'var(--white)' }}>
+              AI<span style={{ color: 'var(--lime)' }}> IBIZA</span>
+            </div>
+            <p className="font-mono" style={{ color: 'var(--muted)', lineHeight: '1.8', fontSize: '11px' }}>
+              AI consulting and automation infrastructure.<br />
+              Operating from Ibiza. Deployed everywhere.
+            </p>
+            <div className="terminal-block mt-6" style={{ padding: '10px 14px', fontSize: '10px' }}>
+              <div>status: <span style={{ color: 'var(--lime)' }}>OPERATIONAL</span></div>
+              <div>systems: <span style={{ color: 'var(--phosphor)' }}>ALL RUNNING</span></div>
+            </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <label className="font-body text-white/30 text-xs tracking-widest uppercase">Email</label>
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="your@email.com"
-              className="bg-transparent border border-white/10 px-4 py-3 font-body text-white text-sm placeholder:text-white/20 focus:border-fluor focus:outline-none transition-colors"
-            />
+
+          {/* Navigation */}
+          <div>
+            <div className="label mb-6" style={{ color: 'var(--muted)', fontSize: '10px' }}>Navigation</div>
+            <div className="space-y-3">
+              {[
+                { label: 'Services', href: '#services' },
+                { label: 'Masterclasses', href: '#masterclasses' },
+                { label: 'OpenClaw Systems', href: '#openclaw' },
+                { label: 'About', href: '#about' },
+                { label: 'Contact', href: '#contact' },
+              ].map(link => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="block font-mono text-xs transition-colors duration-200"
+                  style={{ color: 'var(--grey)', fontSize: '12px' }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'var(--lime)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = 'var(--grey)')}
+                >
+                  &gt; {link.label}
+                </a>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-col gap-2 md:col-span-2">
-            <label className="font-body text-white/30 text-xs tracking-widest uppercase">Message</label>
-            <textarea
-              name="message"
-              required
-              rows={4}
-              placeholder="What's on your mind?"
-              className="bg-transparent border border-white/10 px-4 py-3 font-body text-white text-sm placeholder:text-white/20 focus:border-fluor focus:outline-none transition-colors resize-none"
-            />
+
+          {/* Location + CTA */}
+          <div>
+            <div className="label mb-6" style={{ color: 'var(--muted)', fontSize: '10px' }}>Location</div>
+            <div className="font-mono space-y-1.5" style={{ fontSize: '12px', color: 'var(--grey)', lineHeight: '1.9' }}>
+              <div style={{ color: 'var(--white)' }}>Ibiza, Balearic Islands</div>
+              <div>Spain / European Union</div>
+              <div style={{ color: 'var(--muted)' }}>Operating globally</div>
+            </div>
+            <div className="mt-8">
+              <a href="#contact" className="btn-primary" style={{ fontSize: '10px', padding: '10px 20px' }}>
+                &gt; Book a Call
+              </a>
+            </div>
           </div>
-          <div className="md:col-span-2">
+        </div>
+
+        {/* Divider */}
+        <div style={{ height: '1px', background: 'var(--ghost-line)' }} />
+
+        {/* Bottom bar */}
+        <div className="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+
+          {/* Copyright */}
+          <div className="font-mono" style={{ fontSize: '10px', color: 'var(--muted)', lineHeight: '1.8' }}>
+            <p>© {year} AI Ibiza. All rights reserved.</p>
+            <p style={{ marginTop: '2px' }}>
+              AI Ibiza is operated from Ibiza, Balearic Islands, Spain.
+              All services subject to our{' '}
+              <button
+                onClick={() => onOpenLegal('disclaimer')}
+                className="font-mono underline"
+                style={{ color: 'var(--grey)', background: 'none', border: 'none', fontSize: '10px', transition: 'color 0.2s' }}
+                onMouseEnter={e => (e.currentTarget.style.color = 'var(--lime)')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'var(--grey)')}
+              >
+                Disclaimer
+              </button>
+              {' '}and{' '}
+              <button
+                onClick={() => onOpenLegal('privacy')}
+                className="font-mono underline"
+                style={{ color: 'var(--grey)', background: 'none', border: 'none', fontSize: '10px', transition: 'color 0.2s' }}
+                onMouseEnter={e => (e.currentTarget.style.color = 'var(--lime)')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'var(--grey)')}
+              >
+                Privacy Policy
+              </button>
+              .
+            </p>
+          </div>
+
+          {/* Legal links + domain */}
+          <div className="flex items-center gap-6">
             <button
-              type="submit"
-              className="font-body text-xs tracking-widest uppercase bg-fluor text-black px-8 py-4 hover:opacity-80 transition-opacity"
+              onClick={() => onOpenLegal('disclaimer')}
+              className="font-mono"
+              style={{ fontSize: '10px', color: 'var(--muted)', background: 'none', border: 'none', letterSpacing: '0.08em', textTransform: 'uppercase', transition: 'color 0.2s' }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--lime)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}
             >
-              Send Message →
+              Disclaimer
             </button>
+            <span style={{ color: 'var(--ghost-line)' }}>|</span>
+            <button
+              onClick={() => onOpenLegal('privacy')}
+              className="font-mono"
+              style={{ fontSize: '10px', color: 'var(--muted)', background: 'none', border: 'none', letterSpacing: '0.08em', textTransform: 'uppercase', transition: 'color 0.2s' }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'var(--lime)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}
+            >
+              Privacy & Cookies
+            </button>
+            <span style={{ color: 'var(--ghost-line)' }}>|</span>
+            <p className="font-mono" style={{ fontSize: '10px', color: 'var(--muted)' }}>
+              <span style={{ color: 'var(--phosphor)' }}>&gt;</span> aiibiza.com
+            </p>
           </div>
-        </form>
-      </div>
-
-      {/* Footer nav */}
-      <div className="px-6 md:px-10 py-12 grid md:grid-cols-3 gap-12">
-        <div>
-          <p className="font-display text-2xl text-white mb-6">GEE VAN D</p>
-          <p className="font-body text-white/40 text-sm leading-relaxed">
-            Web3. Music. Kitchen. Ibiza.<br />
-            25 years on the island.<br />
-            No filter.
-          </p>
-        </div>
-
-        <div>
-          <p className="font-body text-white/30 text-xs tracking-widest uppercase mb-4">Ventures</p>
-          <ul className="space-y-3">
-            {[
-              { label: '06 AM Ibiza Underground Radio', href: 'https://youtube.com/@06amibiza' },
-              { label: '2 Chefs Ibiza', href: 'https://2chefsibiza.com' },
-              { label: 'Fasting Ibiza', href: 'https://fastingibiza.com' },
-              { label: 'Gee Spot Recordings', href: 'https://www.youtube.com/@GeeSpotRecordings' },
-            ].map(l => (
-              <li key={l.label}>
-                <a href={l.href} target="_blank" rel="noopener noreferrer"
-                  className="font-body text-white/50 text-sm hover:text-fluor transition-colors">
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <p className="font-body text-white/30 text-xs tracking-widest uppercase mb-4">Socials</p>
-          <ul className="space-y-3">
-            {[
-              { label: '@GeeSpot17 on X', href: 'https://x.com/GeeSpot17' },
-              { label: 'Resident Advisor', href: 'https://ra.co/dj/geevand' },
-              { label: 'Linktree', href: 'https://linktr.ee/GeeVanD' },
-              { label: 'YouTube — 06 AM', href: 'https://youtube.com/@06amibiza' },
-            ].map(l => (
-              <li key={l.label}>
-                <a href={l.href} target="_blank" rel="noopener noreferrer"
-                  className="font-body text-white/50 text-sm hover:text-fluor transition-colors">
-                  {l.label} ↗
-                </a>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
-
-      <div className="px-6 md:px-10 py-6 border-t border-white/5 flex justify-between items-center">
-        <div className="flex items-center gap-4">
-          <p className="font-body text-white/20 text-xs">©2026 Gee Van D. All rights reserved.</p>
-          <button onClick={() => onLegal('privacy')} className="font-body text-white/20 text-xs hover:text-fluor transition-colors">Privacy</button>
-          <button onClick={() => onLegal('terms')} className="font-body text-white/20 text-xs hover:text-fluor transition-colors">Terms</button>
-        </div>
-        <div className="flex items-center gap-5">
-          {/* Instagram */}
-          <a href="https://www.instagram.com/geeibiza_ibz/" target="_blank" rel="noopener noreferrer"
-            className="text-white/30 hover:text-fluor transition-colors" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-            </svg>
-          </a>
-          {/* X / Twitter */}
-          <a href="https://x.com/GeeSpot17" target="_blank" rel="noopener noreferrer"
-            className="text-white/30 hover:text-fluor transition-colors" aria-label="X">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.261 5.636 5.903-5.636Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
-          <p className="font-body text-white/20 text-xs">$BTC · #AbstractChain · #NFT</p>
-        </div>
-      </div>
-
-      {/* Back to top — mirrors hero scroll indicator */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="absolute bottom-6 right-10 flex flex-col items-center gap-2 group"
-        aria-label="Back to top"
-      >
-        <div className="w-px h-12 bg-gradient-to-t from-fluor to-transparent" />
-        <span className="text-white/30 group-hover:text-fluor transition-colors text-xs tracking-widest uppercase -rotate-90 origin-center">Top</span>
-      </button>
     </footer>
   )
 }

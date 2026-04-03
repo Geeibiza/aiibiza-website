@@ -3,53 +3,71 @@ import Lenis from 'lenis'
 import Cursor from './components/Cursor'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import Intro from './components/Intro'
-import DJSection from './components/DJSection'
-import KitchenSection from './components/KitchenSection'
-import Web3Section from './components/Web3Section'
-import ArcadeSection from './components/ArcadeSection'
+import Credibility from './components/Credibility'
+import Services from './components/Services'
+import OpenClaw from './components/OpenClaw'
+import Philosophy from './components/Philosophy'
+import About from './components/About'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
 import LegalModal from './components/LegalModal'
 
+type LegalPage = 'privacy' | 'disclaimer' | null
+
 export default function App() {
-  const [legalPage, setLegalPage] = useState<'privacy' | 'terms' | null>(null)
+  const [legalPage, setLegalPage] = useState<LegalPage>(null)
 
-  useEffect(() => {
-    const handler = (e: Event) => setLegalPage((e as CustomEvent).detail)
-    window.addEventListener('open-legal', handler)
-    return () => window.removeEventListener('open-legal', handler)
-  }, [])
-
+  // Smooth scroll
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     })
-
     function raf(time: number) {
       lenis.raf(time)
       requestAnimationFrame(raf)
     }
     requestAnimationFrame(raf)
-
     return () => lenis.destroy()
   }, [])
 
+  // Scroll reveal
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 60)
+          }
+        })
+      },
+      { threshold: 0.08 }
+    )
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <div className="bg-black min-h-screen">
+    <div style={{ background: 'var(--void)', minHeight: '100vh' }}>
+      <div className="noise-overlay" />
+      <div className="top-bar" />
+
       <Cursor />
       <Nav />
+
       <main>
         <Hero />
-        <Intro />
-        <ArcadeSection />
-        <DJSection />
-        <Web3Section />
-        <KitchenSection />
+        <Credibility />
+        <Services />
+        <OpenClaw />
+        <Philosophy />
+        <About />
+        <Contact />
       </main>
-      <Footer onLegal={setLegalPage} />
-      <CookieBanner />
+
+      <Footer onOpenLegal={setLegalPage} />
+      <CookieBanner onOpenLegal={setLegalPage} />
       <LegalModal page={legalPage} onClose={() => setLegalPage(null)} />
     </div>
   )

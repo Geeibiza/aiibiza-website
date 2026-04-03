@@ -4,15 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        black: '#111111',
-        white: '#FAFAF8',
-        fluor: '#C8FF00',
+        void: '#0A0A0F',
+        terminal: '#0F0F1A',
+        obsidian: '#14141F',
+        lime: '#AEFF00',
+        phosphor: '#00FF88',
+        violet: '#7B2FFF',
+        sand: '#D4AF6A',
       },
       fontFamily: {
-        display: ['"Bebas Neue"', 'sans-serif'],
-        body: ['"DM Sans"', 'sans-serif'],
-        script: ['"Caveat"', 'cursive'],
-        pixel: ['"Press Start 2P"', 'monospace'],
+        display: ['"Cormorant Garamond"', 'serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+        sans: ['"Space Grotesk"', 'sans-serif'],
       },
     },
   },
