@@ -1,5 +1,9 @@
+import MacCluster from './MacCluster'
+
 const packages = [
   {
+    num: '01',
+    clusterType: 'mini' as const,
     name: 'OpenClaw Mini',
     hardware: '4 × Mac Mini',
     tagline: 'Full power. Compact form.',
@@ -7,6 +11,8 @@ const packages = [
     ideal: 'Small businesses, private clients, home offices',
   },
   {
+    num: '02',
+    clusterType: 'studio' as const,
     name: 'OpenClaw Studio',
     hardware: '4 × Mac Studio',
     tagline: 'Maximum inference. Zero compromise.',
@@ -103,6 +109,11 @@ export default function OpenClaw() {
                 key={pkg.name}
                 className="service-card p-10"
               >
+                {/* Cluster visual */}
+                <div className="mb-8">
+                  <MacCluster type={s.clusterType} />
+                </div>
+
                 {/* Package header */}
                 <div className="flex items-start justify-between mb-6">
                   <div>
