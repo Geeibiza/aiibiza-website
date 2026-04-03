@@ -11,7 +11,7 @@ const services = [
     num: '02',
     title: 'OpenClaw Systems',
     tagline: 'Your own intelligence. Privately owned.',
-    desc: 'Bespoke local AI infrastructure. Obsidian knowledge graphs, QMD LLMs, Telegram API, Mac Mini orchestration.',
+    desc: 'Bespoke local AI infrastructure. Obsidian knowledge graphs, QMD, local LLMs, Telegram API, Mac Mini orchestration.',
     tags: ['Data Sovereignty', 'Local LLM', 'Automation', 'Private'],
     href: '#openclaw',
   },
