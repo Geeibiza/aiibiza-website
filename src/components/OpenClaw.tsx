@@ -7,7 +7,7 @@ const packages = [
     name: 'OpenClaw Mini',
     hardware: '4 × Mac Mini',
     tagline: 'Full power. Compact form.',
-    specs: ['4-node local AI cluster', 'Unified Obsidian knowledge graph', 'QMD', 'Local LLM stack', 'Telegram control interface', 'iPad command dashboard', 'iPhone remote access'],
+    specs: ['4-node local AI cluster', 'Unified Obsidian knowledge graph', 'QMD — private local search', 'Local LLM stack', 'Telegram control interface', 'iPad command dashboard', 'iPhone remote access'],
     ideal: 'Small businesses, private clients, home offices',
   },
   {
@@ -16,7 +16,7 @@ const packages = [
     name: 'OpenClaw Studio',
     hardware: '4 × Mac Studio',
     tagline: 'Maximum inference. Zero compromise.',
-    specs: ['4-node high-performance cluster', 'Extended AI model capacity', 'QMD', 'Local LLM stack', 'Multi-environment Cloud Claws', 'Full Kali Linux orchestration', 'iPad command dashboard', 'iPhone remote access'],
+    specs: ['4-node high-performance cluster', 'Extended AI model capacity', 'QMD — private local search', 'Local LLM stack', 'Multi-environment Cloud Claws', 'Full Kali Linux orchestration', 'iPad command dashboard', 'iPhone remote access'],
     ideal: 'Enterprise clients, research, heavy automation workloads',
   },
 ]
@@ -26,7 +26,8 @@ const systemLines = [
   { key: 'status', val: '[OPERATIONAL]', color: 'var(--lime)' },
   { key: 'cluster', val: '4-node / mac-mini or mac-studio', color: 'var(--white)' },
   { key: 'data_sovereignty', val: 'absolute', color: 'var(--phosphor)' },
-  { key: 'components', val: 'obsidian / qmd / local-llm / telegram / ipad / iphone', color: 'var(--white)' },
+  { key: 'qmd', val: 'private search engine / local / zero data exposure', color: 'var(--white)' },
+  { key: 'local_llm', val: 'AI model running on your hardware', color: 'var(--white)' },
   { key: 'cloud_claws', val: 'kali-linux distributed / active', color: 'var(--phosphor)' },
   { key: 'cloud_dependency', val: 'NONE', color: 'var(--lime)' },
   { key: 'package', val: 'hardware + software + setup included', color: 'var(--white)' },
@@ -163,7 +164,7 @@ export default function OpenClaw() {
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { icon: '⬡', title: 'Obsidian Vault', desc: 'Your knowledge graph — mapped, linked, queryable' },
-                { icon: '⬡', title: 'QMD', desc: 'Query management and data layer. Fully local, fully private.' },
+                { icon: '⬡', title: 'QMD', desc: 'Private search engine — indexes and searches your entire knowledge base locally. Nothing leaves your system.' },
                 { icon: '⬡', title: 'Local LLM', desc: 'AI model running on your hardware. No cloud. No data leakage.' },
                 { icon: '⬡', title: 'Telegram API', desc: 'Command your entire stack from a message' },
                 { icon: '⬡', title: 'Cloud Claws', desc: 'Kali Linux distributed automation layer' },
