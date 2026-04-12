@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 
 const OLLAMA_URL = import.meta.env.VITE_OLLAMA_URL || 'http://192.168.1.132:11434'
-const MODEL = 'llama3.2:latest'
+const MODEL = 'llama3.2:latest' // 2GB — fastest model on Mac Mini
 
 const SYSTEM_PROMPT = `You are the AI assistant for AI IBIZA VIP — a private AI infrastructure company run by Gee Van Donselaar, based out of a private data centre in Thailand. You speak to potential clients on the website.
 
