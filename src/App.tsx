@@ -9,6 +9,7 @@ import OpenClaw from './components/OpenClaw'
 import Philosophy from './components/Philosophy'
 import About from './components/About'
 import LawFirms from './components/LawFirms'
+import Gestorias from './components/Gestorias'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
@@ -64,6 +65,7 @@ export default function App() {
         <Services />
         <OpenClaw />
         <LawFirms />
+        <Gestorias />
         <Philosophy />
         <About />
         <Contact />
