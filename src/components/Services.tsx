@@ -1,6 +1,7 @@
 const services = [
   {
     num: '01',
+    id: 'masterclasses',
     title: 'Masterclasses',
     tagline: 'Learn from the one who was there first.',
     desc: 'Online and private in-person AI & automation training. Small cohorts. Real systems. Ibiza intensives.',
@@ -9,6 +10,7 @@ const services = [
   },
   {
     num: '02',
+    id: 'openclaw-card',
     title: 'OpenClaw Systems',
     tagline: 'Your own intelligence. Privately owned.',
     desc: 'Bespoke private AI infrastructure. Delivered, installed, and yours — running in your home or office. No cloud. No subscriptions.',
@@ -17,6 +19,7 @@ const services = [
   },
   {
     num: '03',
+    id: 'web',
     title: 'Web Architecture',
     tagline: 'Built to perform. Built to last.',
     desc: 'Complete web design, development and managed hosting — or surgical optimization of what you already have.',
@@ -25,6 +28,7 @@ const services = [
   },
   {
     num: '04',
+    id: 'growth',
     title: 'Growth Engine',
     tagline: 'Your brand, running while you sleep.',
     desc: 'Fully automated SEO and social media — Instagram, TikTok, YouTube. Compounding while you focus elsewhere.',
@@ -55,57 +59,84 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Services grid */}
-        <div className="grid md:grid-cols-2 gap-px" style={{ background: 'var(--ghost-line)' }}>
+        {/* Services grid — floating rounded cards */}
+        <div className="grid md:grid-cols-2 gap-5">
           {services.map((s) => (
             <a
               key={s.num}
+              id={s.id}
               href={s.href}
               className="service-card p-10 block group"
             >
-              {/* Number + title row */}
-              <div className="flex items-start justify-between mb-6">
-                <span className="font-mono text-xs" style={{ color: 'var(--muted)' }}>{s.num}</span>
+              {/* Top row: number badge + arrow */}
+              <div className="flex items-start justify-between mb-8">
                 <span
-                  className="label transition-all duration-300"
-                  style={{ color: 'var(--muted)', fontSize: '9px' }}
+                  className="font-mono"
+                  style={{
+                    fontSize: '10px',
+                    color: 'var(--lime)',
+                    background: 'rgba(174,255,0,0.07)',
+                    border: '1px solid rgba(174,255,0,0.14)',
+                    borderRadius: '6px',
+                    padding: '4px 10px',
+                    letterSpacing: '0.12em',
+                  }}
                 >
-                  ASK FOR PRICE →
+                  {s.num}
+                </span>
+                <span
+                  className="font-mono"
+                  style={{
+                    color: 'var(--muted)',
+                    fontSize: '18px',
+                    transition: 'transform 0.3s ease, color 0.3s ease',
+                  }}
+                >
+                  ↗
                 </span>
               </div>
 
+              {/* Title */}
               <h3
                 className="font-display mb-3"
-                style={{ fontSize: '40px', color: 'var(--white)', transition: 'color 0.3s' }}
+                style={{ fontSize: 'clamp(32px, 3vw, 46px)', color: 'var(--white)', lineHeight: 1.05 }}
               >
                 {s.title}
               </h3>
 
+              {/* Tagline */}
               <p
-                className="font-mono mb-1"
-                style={{ fontSize: '11px', color: 'var(--lime)', letterSpacing: '0.05em', fontStyle: 'italic' }}
+                className="font-mono mb-5"
+                style={{ fontSize: '11px', color: 'var(--lime)', letterSpacing: '0.04em', fontStyle: 'italic', opacity: 0.8 }}
               >
                 "{s.tagline}"
               </p>
 
+              {/* Divider */}
+              <div style={{ height: '1px', background: 'var(--ghost-line)', marginBottom: '20px' }} />
+
+              {/* Description */}
               <p
-                className="font-mono mt-5 mb-8"
-                style={{ fontSize: '12px', color: 'var(--grey)', lineHeight: '1.8' }}
+                className="font-mono mb-8"
+                style={{ fontSize: '12px', color: 'var(--grey)', lineHeight: '1.85' }}
               >
                 {s.desc}
               </p>
 
-              {/* Tags */}
+              {/* Tags — rounded pills */}
               <div className="flex flex-wrap gap-2">
                 {s.tags.map(tag => (
                   <span
                     key={tag}
-                    className="font-mono text-xs px-3 py-1"
+                    className="font-mono"
                     style={{
+                      background: 'rgba(255,255,255,0.03)',
                       border: '1px solid var(--ghost-line)',
+                      borderRadius: '999px',
                       color: 'var(--muted)',
                       fontSize: '10px',
-                      letterSpacing: '0.08em',
+                      padding: '5px 14px',
+                      letterSpacing: '0.07em',
                     }}
                   >
                     {tag}

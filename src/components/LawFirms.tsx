@@ -39,7 +39,7 @@ export default function LawFirms() {
 
         {/* Header */}
         <div className="mb-24">
-          <div className="label mb-8" style={{ color: 'var(--muted)' }}>// For Law Firms</div>
+          <div className="label mb-8">// For Law Firms</div>
           <h2
             className="font-display mb-10"
             style={{ fontSize: 'clamp(38px, 5vw, 72px)', color: 'var(--white)', lineHeight: 1.05, maxWidth: '780px' }}
@@ -95,7 +95,7 @@ export default function LawFirms() {
         {/* The answer — 2 col */}
         <div className="grid md:grid-cols-2 gap-20 items-center mb-24">
           <div>
-            <div className="label mb-6" style={{ color: 'var(--muted)' }}>// The Only Clean Architecture</div>
+            <div className="label mb-6">// The Only Clean Architecture</div>
             <h3
               className="font-display mb-8"
               style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', color: 'var(--white)', lineHeight: 1.15 }}
@@ -148,7 +148,7 @@ export default function LawFirms() {
 
         {/* What it does — outcomes only, no tech */}
         <div className="mb-24">
-          <div className="label mb-10" style={{ color: 'var(--muted)' }}>// What Changes</div>
+          <div className="label mb-10">// What Changes</div>
           <div className="grid md:grid-cols-4 gap-px" style={{ background: 'var(--ghost-line)' }}>
             {outcomes.map(o => (
               <div key={o.label} className="p-8" style={{ background: 'var(--obsidian)' }}>
@@ -163,7 +163,7 @@ export default function LawFirms() {
         {/* Who it's for */}
         <div className="grid md:grid-cols-2 gap-px mb-24" style={{ background: 'var(--ghost-line)' }}>
           <div className="p-10" style={{ background: 'var(--obsidian)' }}>
-            <div className="label mb-6" style={{ color: 'var(--muted)' }}>// Built for</div>
+            <div className="label mb-6">// Built for</div>
             {['Solo practitioners', '2–20 lawyer firms', 'Boutique specialist firms', 'Firms handling sensitive client matters', 'European firms with GDPR obligations'].map(item => (
               <div key={item} className="flex items-center gap-3 mb-3">
                 <span style={{ color: 'var(--phosphor)', fontSize: '9px' }}>→</span>
@@ -172,7 +172,7 @@ export default function LawFirms() {
             ))}
           </div>
           <div className="p-10" style={{ background: 'var(--obsidian)' }}>
-            <div className="label mb-6" style={{ color: 'var(--muted)' }}>// Not for</div>
+            <div className="label mb-6">// Not for</div>
             {['Firms that want a cheap chatbot', 'Firms that don\'t handle sensitive matters', 'Anyone looking for a trial account', 'Large firms with enterprise vendor contracts'].map(item => (
               <div key={item} className="flex items-center gap-3 mb-3">
                 <span style={{ color: 'rgba(248,113,113,0.5)', fontSize: '9px' }}>✗</span>

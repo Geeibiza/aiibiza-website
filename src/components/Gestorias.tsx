@@ -46,7 +46,7 @@ export default function Gestorias() {
 
         {/* Header */}
         <div className="mb-24">
-          <div className="label mb-8" style={{ color: 'var(--muted)' }}>// For Gestorías</div>
+          <div className="label mb-8">// For Gestorías</div>
           <h2
             className="font-display mb-10"
             style={{ fontSize: 'clamp(38px, 5vw, 72px)', color: 'var(--white)', lineHeight: 1.05, maxWidth: '780px' }}
@@ -101,7 +101,7 @@ export default function Gestorias() {
         {/* 2-col: copy + comparison */}
         <div className="grid md:grid-cols-2 gap-20 items-center mb-24">
           <div>
-            <div className="label mb-6" style={{ color: 'var(--muted)' }}>// The Only Compliant Architecture</div>
+            <div className="label mb-6">// The Only Compliant Architecture</div>
             <h3
               className="font-display mb-8"
               style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', color: 'var(--white)', lineHeight: 1.15 }}
@@ -154,7 +154,7 @@ export default function Gestorias() {
 
         {/* What it does */}
         <div className="mb-24">
-          <div className="label mb-10" style={{ color: 'var(--muted)' }}>// What Changes</div>
+          <div className="label mb-10">// What Changes</div>
           <div className="grid md:grid-cols-4 gap-px" style={{ background: 'var(--ghost-line)' }}>
             {outcomes.map(o => (
               <div key={o.label} className="p-8" style={{ background: 'var(--obsidian)' }}>
@@ -168,7 +168,7 @@ export default function Gestorias() {
 
         {/* What AI does — 5 use cases */}
         <div className="mb-24">
-          <div className="label mb-10" style={{ color: 'var(--muted)' }}>// Five Things It Does For You</div>
+          <div className="label mb-10">// Five Things It Does For You</div>
           <div className="grid md:grid-cols-2 gap-px" style={{ background: 'var(--ghost-line)' }}>
             {[
               {
@@ -198,7 +198,7 @@ export default function Gestorias() {
               },
             ].map(uc => (
               <div key={uc.num} className="p-10" style={{ background: 'var(--obsidian)' }}>
-                <div className="label mb-3" style={{ color: 'var(--muted)', fontSize: '9px' }}>{uc.num}</div>
+                <div className="label mb-3" style={{ fontSize: '9px' }}>{uc.num}</div>
                 <div className="font-mono mb-4" style={{ fontSize: '14px', color: 'var(--white)', fontWeight: 600 }}>{uc.title}</div>
                 <p className="font-mono" style={{ fontSize: '12px', color: 'var(--muted)', lineHeight: '1.8' }}>{uc.desc}</p>
               </div>
@@ -225,7 +225,7 @@ export default function Gestorias() {
         {/* Who it's for */}
         <div className="grid md:grid-cols-2 gap-px mb-24" style={{ background: 'var(--ghost-line)' }}>
           <div className="p-10" style={{ background: 'var(--obsidian)' }}>
-            <div className="label mb-6" style={{ color: 'var(--muted)' }}>// Built for</div>
+            <div className="label mb-6">// Built for</div>
             {[
               'Solo gestores with 50–200 clients',
               'Despachos with 2–15 staff',
@@ -241,7 +241,7 @@ export default function Gestorias() {
             ))}
           </div>
           <div className="p-10" style={{ background: 'var(--obsidian)' }}>
-            <div className="label mb-6" style={{ color: 'var(--muted)' }}>// Not for</div>
+            <div className="label mb-6">// Not for</div>
             {[
               'Gestorías looking for a cheap chatbot',
               'Anyone who wants to keep using ChatGPT with client data',
