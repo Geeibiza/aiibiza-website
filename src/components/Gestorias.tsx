@@ -30,24 +30,7 @@ export default function Gestorias() {
       className="py-32 reveal"
       style={{ position: 'relative', overflow: 'hidden' }}
     >
-      {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          filter: 'brightness(0.12) saturate(0.6)',
-          zIndex: 0,
-        }}
-      >
-        <source src="/gestor-bg.mp4" type="video/mp4" />
-      </video>
+      {/* Dark void background — no video */}
 
       {/* Gradient overlay */}
       <div style={{
