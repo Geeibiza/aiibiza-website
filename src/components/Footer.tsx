@@ -64,11 +64,53 @@ export default function Footer({ onOpenLegal }: { onOpenLegal: (page: LegalPage)
               <div>Thailand</div>
               <div style={{ color: 'var(--muted)' }}>Clients worldwide — law firms, operators, enterprises</div>
             </div>
-            <div className="mt-8">
-              <a href="#contact" className="btn-primary" style={{ fontSize: '10px', padding: '10px 20px' }}>
-                &gt; Book a Call
-              </a>
+
+            {/* Social links — Pikachu */}
+            <div className="mt-8 mb-6">
+              <div className="label mb-4" style={{ color: 'var(--muted)', fontSize: '10px' }}>Follow</div>
+              <div className="flex items-center gap-4">
+                {/* Instagram */}
+                <a href="https://instagram.com/pikachu0x0x" target="_blank" rel="noopener noreferrer"
+                  style={{ color: 'var(--muted)', transition: 'color 0.2s' }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'var(--lime)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}
+                  title="Instagram @pikachu0x0x"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                  </svg>
+                </a>
+                {/* TikTok */}
+                <a href="https://tiktok.com/@pikachu0x0x" target="_blank" rel="noopener noreferrer"
+                  style={{ color: 'var(--muted)', transition: 'color 0.2s' }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'var(--lime)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}
+                  title="TikTok @pikachu0x0x"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/>
+                  </svg>
+                </a>
+                {/* YouTube */}
+                <a href="https://youtube.com/@pikachu0x0x" target="_blank" rel="noopener noreferrer"
+                  style={{ color: 'var(--muted)', transition: 'color 0.2s' }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'var(--lime)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}
+                  title="YouTube @pikachu0x0x"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </a>
+              </div>
+              <div className="font-mono mt-2" style={{ fontSize: '10px', color: 'var(--muted)' }}>@pikachu0x0x</div>
             </div>
+
+            <a href="#contact" className="btn-primary" style={{ fontSize: '10px', padding: '10px 20px' }}>
+              &gt; Book a Call
+            </a>
           </div>
         </div>
 

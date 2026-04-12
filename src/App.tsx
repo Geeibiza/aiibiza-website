@@ -13,6 +13,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
 import LegalModal from './components/LegalModal'
+import ChatWidget from './components/ChatWidget'
 
 type LegalPage = 'privacy' | 'disclaimer' | null
 
@@ -71,6 +72,7 @@ export default function App() {
       <Footer onOpenLegal={setLegalPage} />
       <CookieBanner onOpenLegal={setLegalPage} />
       <LegalModal page={legalPage} onClose={() => setLegalPage(null)} />
+      <ChatWidget />
     </div>
   )
 }
