@@ -15,8 +15,22 @@ export default function Footer({ onOpenLegal }: { onOpenLegal: (page: LegalPage)
 
         <div className="grid md:grid-cols-3 gap-12 mb-16">
 
-          {/* Brand */}
+          {/* Brand + PFP */}
           <div>
+            {/* Big PFP */}
+            <img
+              src="/pfp.png"
+              alt="pikachu0x0x"
+              style={{
+                width: '180px',
+                height: '180px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: '2px solid var(--ghost-line)',
+                marginBottom: '20px',
+                display: 'block',
+              }}
+            />
             <div className="font-mono text-sm tracking-widest uppercase mb-4" style={{ letterSpacing: '0.2em', color: 'var(--white)' }}>
               AI<span style={{ color: 'var(--lime)' }}> IBIZA</span>
             </div>
@@ -69,30 +83,6 @@ export default function Footer({ onOpenLegal }: { onOpenLegal: (page: LegalPage)
             <div className="mt-8 mb-6">
               <div className="label mb-4" style={{ color: 'var(--muted)', fontSize: '10px' }}>Follow</div>
               <div className="flex items-center gap-4">
-
-                {/* PFP circle */}
-                <a href="https://x.com/MatrixABS" target="_blank" rel="noopener noreferrer">
-                  <img
-                    src="/pfp.png"
-                    alt="GeeSpot17"
-                    style={{
-                      width: '42px',
-                      height: '42px',
-                      borderRadius: '50%',
-                      border: '1px solid var(--ghost-line)',
-                      objectFit: 'cover',
-                      transition: 'border-color 0.2s, box-shadow 0.2s',
-                    }}
-                    onMouseEnter={e => {
-                      (e.currentTarget as HTMLImageElement).style.borderColor = 'var(--lime)'
-                      ;(e.currentTarget as HTMLImageElement).style.boxShadow = '0 0 12px rgba(174,255,0,0.3)'
-                    }}
-                    onMouseLeave={e => {
-                      (e.currentTarget as HTMLImageElement).style.borderColor = 'var(--ghost-line)'
-                      ;(e.currentTarget as HTMLImageElement).style.boxShadow = 'none'
-                    }}
-                  />
-                </a>
 
                 {/* X / Twitter */}
                 <a href="https://x.com/MatrixABS" target="_blank" rel="noopener noreferrer"
