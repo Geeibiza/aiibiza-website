@@ -22,11 +22,12 @@ export default function Footer({ onOpenLegal }: { onOpenLegal: (page: LegalPage)
             </div>
             <p className="font-mono" style={{ color: 'var(--muted)', lineHeight: '1.8', fontSize: '11px' }}>
               AI consulting and automation infrastructure.<br />
-              Operating from Ibiza. Deployed everywhere.
+              Private data centre. Worldwide clients.
             </p>
             <div className="terminal-block mt-6" style={{ padding: '10px 14px', fontSize: '10px' }}>
               <div>status: <span style={{ color: 'var(--lime)' }}>OPERATIONAL</span></div>
               <div>systems: <span style={{ color: 'var(--phosphor)' }}>ALL RUNNING</span></div>
+              <div>data_centre: <span style={{ color: 'var(--white)' }}>Thailand / private</span></div>
             </div>
           </div>
 
@@ -59,9 +60,9 @@ export default function Footer({ onOpenLegal }: { onOpenLegal: (page: LegalPage)
           <div>
             <div className="label mb-6" style={{ color: 'var(--muted)', fontSize: '10px' }}>Location</div>
             <div className="font-mono space-y-1.5" style={{ fontSize: '12px', color: 'var(--grey)', lineHeight: '1.9' }}>
-              <div style={{ color: 'var(--white)' }}>Ibiza, Balearic Islands</div>
-              <div>Spain / European Union</div>
-              <div style={{ color: 'var(--muted)' }}>Operating globally</div>
+              <div style={{ color: 'var(--white)' }}>Private Data Centre</div>
+              <div>Thailand</div>
+              <div style={{ color: 'var(--muted)' }}>Clients worldwide — law firms, operators, enterprises</div>
             </div>
             <div className="mt-8">
               <a href="#contact" className="btn-primary" style={{ fontSize: '10px', padding: '10px 20px' }}>
@@ -81,7 +82,7 @@ export default function Footer({ onOpenLegal }: { onOpenLegal: (page: LegalPage)
           <div className="font-mono" style={{ fontSize: '10px', color: 'var(--muted)', lineHeight: '1.8' }}>
             <p>© {year} AI Ibiza. All rights reserved.</p>
             <p style={{ marginTop: '2px' }}>
-              AI Ibiza is operated from Ibiza, Balearic Islands, Spain.
+              AI Ibiza — Private Data Centre, Thailand. Worldwide clients.
               All services subject to our{' '}
               <button
                 onClick={() => onOpenLegal('disclaimer')}

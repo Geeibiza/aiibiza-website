@@ -1,7 +1,25 @@
 export default function About() {
   return (
-    <section id="about" className="py-32 reveal">
-      <div className="max-w-7xl mx-auto px-8">
+    <section id="about" className="py-32 reveal" style={{ position: 'relative', overflow: 'hidden' }}>
+
+      {/* US Robotics modem — the actual hardware that ran Thunderdome */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: 'url(/usrobotics3.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center 40%',
+        filter: 'brightness(0.12) saturate(0.4) sepia(0.3)',
+        zIndex: 0,
+      }} />
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(180deg, var(--void) 0%, transparent 15%, transparent 80%, var(--void) 100%)',
+        zIndex: 1,
+      }} />
+
+      <div className="max-w-7xl mx-auto px-8" style={{ position: 'relative', zIndex: 2 }}>
 
         <div className="w-full h-px mb-24" style={{ background: 'var(--ghost-line)' }} />
 
@@ -93,17 +111,24 @@ export default function About() {
               </h3>
               <p className="font-mono" style={{ fontSize: '13px', color: 'var(--grey)', lineHeight: '1.95' }}>
                 When BBS networks emerged as the communication layer of the pre-web underground, the natural response was to build one. Not a small one.{' '}
-                <span style={{ color: 'var(--white)' }}>Thunderdome ran 10 lines</span> — ten simultaneous connections at a time when most operations ran one or two. It operated from a dedicated server with terminals running in a bedroom — not a corporate office, not a university lab. A bedroom, by someone who understood exactly what they were building.
+                <span style={{ color: 'var(--white)' }}>Thunderdome ran 10 lines — powered by 10 US Robotics modems</span>, wired together in a bedroom at a time when most operations ran a single line. US Robotics was the gold standard. Ten of them meant ten simultaneous connections, ten streams of the underground flowing in and out, continuously.
               </p>
               <p className="font-mono mt-4" style={{ fontSize: '13px', color: 'var(--grey)', lineHeight: '1.95' }}>
-                Thunderdome was one of the largest BBS networks of its era. It was a community, an infrastructure project, and a proof of concept — all at once.
+                Hackers uploaded their warez. Users downloaded. Phreakers shared their texts — how to exploit the phone network, how to move through systems that were never meant to be moved through. FTP drops. Exploit guides. The kind of knowledge that only existed on boards like this, passed between people who went by names, not faces.{' '}
+                <span style={{ color: 'var(--white)' }}>On the boards, the handle was Gandalf.</span>
+              </p>
+              <p className="font-mono mt-4" style={{ fontSize: '13px', color: 'var(--grey)', lineHeight: '1.95' }}>
+                This was the original open-source movement — before it had a name. Before GitHub. Before Stack Overflow. A raw, decentralised network of people who understood that information wanted to be free, and built the infrastructure to prove it.
               </p>
             </div>
 
             {/* Terminal detail */}
             <div className="terminal-block">
               <div>system: <span style={{ color: 'var(--white)' }}>THUNDERDOME BBS</span></div>
-              <div>lines: <span style={{ color: 'var(--lime)' }}>10 simultaneous connections</span></div>
+              <div>handle: <span style={{ color: 'var(--lime)' }}>GANDALF</span></div>
+              <div>lines: <span style={{ color: 'var(--white)' }}>10 simultaneous connections</span></div>
+              <div>modems: <span style={{ color: 'var(--phosphor)' }}>10× US Robotics / wired / always on</span></div>
+              <div>content: <span style={{ color: 'var(--white)' }}>warez / phreaker texts / FTP drops / exploit guides</span></div>
               <div>hardware: <span style={{ color: 'var(--white)' }}>dedicated server / bedroom terminals</span></div>
               <div>era: <span style={{ color: 'var(--white)' }}>pre-public internet / ARPANET adjacent</span></div>
               <div>prior_access: <span style={{ color: 'var(--phosphor)' }}>CDC 6500/6600 via university dial-back</span></div>
@@ -114,23 +139,37 @@ export default function About() {
             {/* Chapter 4 */}
             <div>
               <h3 className="font-mono text-xs mb-4" style={{ color: 'var(--lime)', letterSpacing: '0.15em' }}>
-                04 / THE CHAIN
+                04 / BLUEBOXING
               </h3>
               <p className="font-mono" style={{ fontSize: '13px', color: 'var(--grey)', lineHeight: '1.95' }}>
-                In <span style={{ color: 'var(--white)' }}>2009</span>, Bitcoin existed for one year. The whitepaper was thirteen months old. Most people who would eventually become advocates were, in 2009, doing something else entirely. The founder of AI Ibiza was mining Bitcoin — not as a trade, as a conviction. The same instinct that dialed into university mainframes in the pre-internet era recognized immediately what the blockchain architecture meant.
+                Before any of this had commercial value, there was <span style={{ color: 'var(--white)' }}>blueboxing</span> — the art of generating 2600 Hz tones to seize control of phone network trunk lines. Free calls anywhere in the world. Access to systems that weren't supposed to be accessible. The phone company as the first network to hack.
               </p>
               <p className="font-mono mt-4" style={{ fontSize: '13px', color: 'var(--grey)', lineHeight: '1.95' }}>
-                That conviction compounded. Into Web3. Into DeFi from its earliest, most unformed days. Into the AI infrastructure that now runs continuously from a private data center — OpenClaw clusters, Cloud Claws, Kali Linux systems under centralized orchestration.
-              </p>
-              <p className="font-mono mt-4" style={{ fontSize: '13px', color: 'var(--white)', lineHeight: '1.95', fontStyle: 'italic' }}>
-                The same person. The same instinct. Four decades of arriving first.
+                <span style={{ color: 'var(--white)' }}>Steve Jobs and Steve Wozniak ran blue boxes.</span> Woz built them. Jobs sold them. It was, by Jobs' own account, the founding logic of Apple — if you could trick AT&T, you could build a computer company. That same underground ran through Thunderdome. The same people. The same ethos.{' '}
+                <span style={{ color: 'var(--white)' }}>Gandalf was part of that world.</span>
               </p>
             </div>
 
             {/* Chapter 5 */}
             <div>
               <h3 className="font-mono text-xs mb-4" style={{ color: 'var(--lime)', letterSpacing: '0.15em' }}>
-                05 / THE INFRASTRUCTURE
+                05 / THE CHAIN
+              </h3>
+              <p className="font-mono" style={{ fontSize: '13px', color: 'var(--grey)', lineHeight: '1.95' }}>
+                In <span style={{ color: 'var(--white)' }}>2009</span>, Bitcoin existed for one year. The whitepaper was thirteen months old. Most people who would eventually become advocates were, in 2009, doing something else entirely. The founder of AI Ibiza was mining Bitcoin — not as a trade, as a conviction. The same instinct that dialed into university mainframes in the pre-internet era recognized immediately what the blockchain architecture meant.
+              </p>
+              <p className="font-mono mt-4" style={{ fontSize: '13px', color: 'var(--grey)', lineHeight: '1.95' }}>
+                That conviction compounded. Into Web3. Into DeFi from its earliest, most unformed days. Into the AI infrastructure that now runs continuously from a private data centre in Thailand — OpenClaw clusters, Cloud Claws, Kali Linux systems under centralized orchestration.
+              </p>
+              <p className="font-mono mt-4" style={{ fontSize: '13px', color: 'var(--white)', lineHeight: '1.95', fontStyle: 'italic' }}>
+                The same person. The same instinct. Four decades of arriving first.
+              </p>
+            </div>
+
+            {/* Chapter 6 */}
+            <div>
+              <h3 className="font-mono text-xs mb-4" style={{ color: 'var(--lime)', letterSpacing: '0.15em' }}>
+                06 / THE INFRASTRUCTURE
               </h3>
               <p className="font-mono" style={{ fontSize: '13px', color: 'var(--grey)', lineHeight: '1.95' }}>
                 A private data center, purpose-built for AI workloads. OpenClaw clusters — private compute arrays built from{' '}
@@ -158,5 +197,6 @@ export default function About() {
         </div>
       </div>
     </section>
+
   )
 }

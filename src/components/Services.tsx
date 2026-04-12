@@ -4,15 +4,15 @@ const services = [
     title: 'Masterclasses',
     tagline: 'Learn from the one who was there first.',
     desc: 'Online and private in-person AI & automation training. Small cohorts. Real systems. Ibiza intensives.',
-    tags: ['Local LLMs', 'Automation', 'Agents', 'Ibiza Sessions'],
+    tags: ['AI Training', 'Automation', 'Agents', 'Ibiza Sessions'],
     href: '#masterclasses',
   },
   {
     num: '02',
     title: 'OpenClaw Systems',
     tagline: 'Your own intelligence. Privately owned.',
-    desc: 'Bespoke local AI infrastructure. Obsidian knowledge graphs, QMD private search, local LLMs, Telegram API, Mac Mini orchestration.',
-    tags: ['Data Sovereignty', 'Local LLM', 'Automation', 'Private'],
+    desc: 'Bespoke private AI infrastructure. Delivered, installed, and yours — running in your home or office. No cloud. No subscriptions.',
+    tags: ['Data Sovereignty', 'Private AI', 'Automation', 'Self-Custodial'],
     href: '#openclaw',
   },
   {

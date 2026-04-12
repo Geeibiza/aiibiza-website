@@ -33,9 +33,11 @@ export default function Credibility() {
             </p>
 
             <div className="terminal-block">
+              <div>handle: <span style={{ color: 'var(--lime)' }}>GANDALF</span></div>
               <div>first_computer: <span style={{ color: 'var(--white)' }}>Commodore 64 / age 15 / still running</span></div>
-              <div>bbs: <span style={{ color: 'var(--white)' }}>Thunderdome / 10 lines / bedroom server</span></div>
+              <div>bbs: <span style={{ color: 'var(--white)' }}>Thunderdome / 10 lines / 10× US Robotics modems</span></div>
               <div>pre_internet: <span style={{ color: 'var(--lime)' }}>CDC 6500 + 6600 via university dial-back</span></div>
+              <div>scene: <span style={{ color: 'var(--phosphor)' }}>warez / phreaking / blueboxing</span></div>
               <div>btc: <span style={{ color: 'var(--white)' }}>mining since 2009</span></div>
               <div>web3: <span style={{ color: 'var(--white)' }}>DeFi since 2020</span></div>
               <div>infrastructure: <span style={{ color: 'var(--phosphor)' }}>OpenClaw / Cloud Claws / active</span></div>

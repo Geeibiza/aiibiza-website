@@ -8,6 +8,7 @@ import Services from './components/Services'
 import OpenClaw from './components/OpenClaw'
 import Philosophy from './components/Philosophy'
 import About from './components/About'
+import LawFirms from './components/LawFirms'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
@@ -61,6 +62,7 @@ export default function App() {
         <Credibility />
         <Services />
         <OpenClaw />
+        <LawFirms />
         <Philosophy />
         <About />
         <Contact />

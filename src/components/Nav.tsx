@@ -15,7 +15,7 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [lastY])
 
-  const navLinks = ['Services', 'Masterclasses', 'About', 'Contact']
+  const navLinks = ['Services', 'Law Firms', 'Masterclasses', 'About', 'Contact']
 
   return (
     <>
@@ -40,7 +40,7 @@ export default function Nav() {
             {navLinks.map(link => (
               <a
                 key={link}
-                href={`#${link.toLowerCase()}`}
+                href={`#${link.toLowerCase().replace(' ', '')}`}
                 className="nav-link font-mono text-xs tracking-widest uppercase"
                 style={{ color: 'var(--grey)' }}
               >
