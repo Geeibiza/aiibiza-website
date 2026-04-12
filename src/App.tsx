@@ -16,6 +16,9 @@ import CookieBanner from './components/CookieBanner'
 import LegalModal from './components/LegalModal'
 import ChatWidget from './components/ChatWidget'
 import SectionNav from './components/SectionNav'
+import Masterclasses from './components/Masterclasses'
+import WebArchitecture from './components/WebArchitecture'
+import GrowthEngine from './components/GrowthEngine'
 
 type LegalPage = 'privacy' | 'disclaimer' | null
 
@@ -65,7 +68,10 @@ export default function App() {
         <Hero />
         <Credibility />
         <Services />
+        <Masterclasses />
         <OpenClaw />
+        <WebArchitecture />
+        <GrowthEngine />
         <LawFirms />
         <Gestorias />
         <Philosophy />

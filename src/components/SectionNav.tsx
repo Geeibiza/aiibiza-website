@@ -3,7 +3,10 @@ import { useEffect, useState } from 'react'
 const sections = [
   { id: 'home', label: 'Home' },
   { id: 'services', label: 'Services' },
+  { id: 'masterclasses', label: 'Masterclasses' },
   { id: 'openclaw', label: 'OpenClaw' },
+  { id: 'web', label: 'Web Architecture' },
+  { id: 'growth', label: 'Growth Engine' },
   { id: 'lawfirms', label: 'Law Firms' },
   { id: 'gestorias', label: 'Gestorías' },
   { id: 'about', label: 'About' },
