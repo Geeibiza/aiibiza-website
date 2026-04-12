@@ -1,7 +1,6 @@
 const services = [
   {
     num: '01',
-    id: 'masterclasses',
     title: 'Masterclasses',
     tagline: 'Learn from the one who was there first.',
     desc: 'Online and private in-person AI & automation training. Small cohorts. Real systems. Ibiza intensives.',
@@ -10,7 +9,6 @@ const services = [
   },
   {
     num: '02',
-    id: 'openclaw-card',
     title: 'OpenClaw Systems',
     tagline: 'Your own intelligence. Privately owned.',
     desc: 'Bespoke private AI infrastructure. Delivered, installed, and yours — running in your home or office. No cloud. No subscriptions.',
@@ -19,7 +17,6 @@ const services = [
   },
   {
     num: '03',
-    id: 'web',
     title: 'Web Architecture',
     tagline: 'Built to perform. Built to last.',
     desc: 'Complete web design, development and managed hosting — or surgical optimization of what you already have.',
@@ -28,7 +25,6 @@ const services = [
   },
   {
     num: '04',
-    id: 'growth',
     title: 'Growth Engine',
     tagline: 'Your brand, running while you sleep.',
     desc: 'Fully automated SEO and social media — Instagram, TikTok, YouTube. Compounding while you focus elsewhere.',
@@ -64,7 +60,6 @@ export default function Services() {
           {services.map((s) => (
             <a
               key={s.num}
-              id={s.id}
               href={s.href}
               className="service-card p-10 block group"
             >
