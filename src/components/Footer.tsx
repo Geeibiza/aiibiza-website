@@ -65,10 +65,47 @@ export default function Footer({ onOpenLegal }: { onOpenLegal: (page: LegalPage)
               <div style={{ color: 'var(--muted)' }}>Clients worldwide — law firms, operators, enterprises</div>
             </div>
 
-            {/* Social links — Pikachu */}
+            {/* Social links — pfp + icons */}
             <div className="mt-8 mb-6">
               <div className="label mb-4" style={{ color: 'var(--muted)', fontSize: '10px' }}>Follow</div>
               <div className="flex items-center gap-4">
+
+                {/* PFP circle */}
+                <a href="https://x.com/MatrixABS" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="/pfp.png"
+                    alt="GeeSpot17"
+                    style={{
+                      width: '42px',
+                      height: '42px',
+                      borderRadius: '50%',
+                      border: '1px solid var(--ghost-line)',
+                      objectFit: 'cover',
+                      transition: 'border-color 0.2s, box-shadow 0.2s',
+                    }}
+                    onMouseEnter={e => {
+                      (e.currentTarget as HTMLImageElement).style.borderColor = 'var(--lime)'
+                      ;(e.currentTarget as HTMLImageElement).style.boxShadow = '0 0 12px rgba(174,255,0,0.3)'
+                    }}
+                    onMouseLeave={e => {
+                      (e.currentTarget as HTMLImageElement).style.borderColor = 'var(--ghost-line)'
+                      ;(e.currentTarget as HTMLImageElement).style.boxShadow = 'none'
+                    }}
+                  />
+                </a>
+
+                {/* X / Twitter */}
+                <a href="https://x.com/MatrixABS" target="_blank" rel="noopener noreferrer"
+                  style={{ color: 'var(--muted)', transition: 'color 0.2s' }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'var(--lime)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}
+                  title="X @MatrixABS"
+                >
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+
                 {/* Instagram */}
                 <a href="https://instagram.com/pikachu0x0x" target="_blank" rel="noopener noreferrer"
                   style={{ color: 'var(--muted)', transition: 'color 0.2s' }}
@@ -82,6 +119,7 @@ export default function Footer({ onOpenLegal }: { onOpenLegal: (page: LegalPage)
                     <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
                   </svg>
                 </a>
+
                 {/* TikTok */}
                 <a href="https://tiktok.com/@pikachu0x0x" target="_blank" rel="noopener noreferrer"
                   style={{ color: 'var(--muted)', transition: 'color 0.2s' }}
@@ -93,6 +131,7 @@ export default function Footer({ onOpenLegal }: { onOpenLegal: (page: LegalPage)
                     <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/>
                   </svg>
                 </a>
+
                 {/* YouTube */}
                 <a href="https://youtube.com/@pikachu0x0x" target="_blank" rel="noopener noreferrer"
                   style={{ color: 'var(--muted)', transition: 'color 0.2s' }}
@@ -105,7 +144,9 @@ export default function Footer({ onOpenLegal }: { onOpenLegal: (page: LegalPage)
                   </svg>
                 </a>
               </div>
-              <div className="font-mono mt-2" style={{ fontSize: '10px', color: 'var(--muted)' }}>@pikachu0x0x</div>
+              <div className="font-mono mt-2" style={{ fontSize: '10px', color: 'var(--muted)' }}>
+                @pikachu0x0x
+              </div>
             </div>
 
             <a href="#contact" className="btn-primary" style={{ fontSize: '10px', padding: '10px 20px' }}>
